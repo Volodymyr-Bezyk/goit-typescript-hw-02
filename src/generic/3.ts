@@ -3,8 +3,10 @@
   Використовуйте generics, щоб вказати, що ці об'єкти можуть бути будь-якого типу.
 */
 
-function merge (objA, objB) {
+type ObjType = { [prop: string]: any };
+
+function merge<T extends ObjType, U extends ObjType>(objA: T, objB: U) {
   return Object.assign(objA, objB);
 }
 
-export {}
+export {};
